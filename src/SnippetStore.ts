@@ -3,17 +3,17 @@ import type { Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
 
 export interface CodeSnippetInput {
-	title:string
-	language:string
-	code:string
+    title: string
+    language: string
+    code: string
 }
-export interface CodeSnippet extends CodeSnippetInput{
-	favorite:boolean
+export interface CodeSnippet extends CodeSnippetInput {
+    favorite: boolean
 }
 
-const storeExample: Writable<CodeSnippet[]> = localStorageStore('snippets', []);
+export const snippetStore: Writable<CodeSnippet[]> = localStorageStore('snippets', []);
 
-export let snippetStore = storeExample
+
 
 
 export function addSnippet(input: CodeSnippetInput) {
